@@ -1,0 +1,53 @@
+version: "3.3"
+services:
+  elasticsearch:
+    build: docker/elasticsearch
+    container_name: dsn_elasticsearch
+    ports:
+      - 9200:9200
+      - 9300:9300
+    volumes:
+      - dsn_es_data:/usr/share/elasticsearch/data
+      - dsn_certs:/usr/share/elasticsearch/config/certs
+    networks:
+      - elastic
+      - webapp
+    environment:
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+
+  kibana:
+    build: docker/kibana
+    container_name: dsn_kibana
+    ports:
+      - 5601:5601
+    depends_on:
+      - elasticsearch
+    volumes:
+      - dsn_kibana_data:/usr/share/kibana/data
+      - dsn_certs:/usr/share/kibana/config/certs
+    networks:
+      - elastic
+    environment:
+      - ELASTICSEARCH_PASSWORD=${KIBANA_PASSWORD}
+
+volumes:
+  dsn_certs:
+    driver: local
+  dsn_es_data:
+    driver: local
+  dsn_kibana_data:
+    driver: local
+
+networks:
+  elastic:
+    driver: bridge
+  webapp:
+    driver: bridge
