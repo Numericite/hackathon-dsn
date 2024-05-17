@@ -1,42 +1,25 @@
-# Hackathon DSN
+# 👩‍💻 Employeur 360
 
-Dépôt pour le Hackathon DSN organisé par la Direction interministérielle du numérique.
+## Description
 
-**📙 Retrouvez le Guide du participant sur Outline en cliquant [ici](https://documentation.beta.numerique.gouv.fr/doc/guide-hackathon-dsn-Vvxa7bq3O0)**
+Un outil facile et rapide pour suivre les coûts de la masse salariale de l'entreprise et obtenir des informations pertinentes sur les employés en deux clics.
 
-## 👩‍💻 Comment participer ? 
+## Problème
 
-Pour participer au Hackathon vous devez tout d'abord créer un fork de ce dépôt. Pour cela cliquez [ici](https://github.com/etalab-ia/Hackathon-DSN/fork) puis sur *"Create fork"*. Vérifiez que votre fork est bien public dans les settings. 
-
-Vous pouvez déposer votre code sur ce fork, il servira pour l'évaluation de votre projet à l'issu du Hackathon ! 
-
-Bon courage 🔥!
-
-## 🌸 Rendu
-
-Pour évaluer votre projet merci de compléter ce README avec les informations suivantes : 
-
-### Description
-
-* *Problématique et proposition de valeur.*
-* *A quelle problématique s’attaque votre projet ?*
-* *Quelle est votre proposition de valeur ?*
+Les petites et moyennes entreprises passent du temps à agréger des données provenant de diverses sources (Excel, logiciels internes) pour préparer les réunions des dirigeants ou les entretiens avec les salariés. La déclaration sociale nominative est une source de données vérifiée qui pourrait permettre de créer des tableaux de bord automatiques, offrant ainsi un accès facile à des vues exploitables.
 
 ### Solution
 
-* *Description de la solution et de ses fonctionnalités*
-* *Quel usage est fait des données ? Que vous permettent-elles de faire ?*
-* *Quelle est la méthode de création de la solution ?*
+Grâce à l'utilisation de l'ETL Logstash, de la base de données indexée Elasticsearch, et de l'outil de visualisation des données Kibana, voici les vues qui ont été créées :
+* Vue entreprise : suivi de la masse salariale, des charges, et de l'égalité hommes-femmes dans l'entreprise.
+* Vue focus salarié : accès aux informations détaillées sur le contrat, les salaires, et les primes d'un salarié.
+* Vue comparative : comparaison de l'entreprise avec d'autres entreprises du même secteur ou d'autres secteurs.
 
 ### Impact envisagé
 
-* *Que permet de faire la solution ?*
-* *Qui sont les usagers visés, et qu’en feraient-ils ?*
-
-### Ressources
-
-* *Lien vers la documentation du projet*
+* Accéder sans actions internes à des données utiles pour le suivi et la prise de décision dans les petites et moyennes entreprises.
+* Comparer en temps réel son activité avec celle d'autres entreprises similaires.
 
 ### [Facultatif] Retours sur la qualité des données exploitées
 
-* *Quelles sont les difficultés que vous avez rencontrées dans l’usage des données ?*
+* Difficulté à suivre précisément les cotisations versées par l'employeur dans le jeu de donnée
